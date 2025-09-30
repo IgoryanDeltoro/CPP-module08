@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
+#include <algorithm>
 
 class Span {
     private:
@@ -15,8 +16,17 @@ class Span {
 
     public:
         Span(unsigned int n);
+        ~Span();
 
+
+        template <typename Iter>
+        void addNumber(Iter b, Iter e);
         void addNumber(int n);
+        int shortestSpan();
+        int longestSpan();
+
 };
+
+#include "span.tpp"
 
 #endif 
