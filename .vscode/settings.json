@@ -49,6 +49,13 @@
         "limits": "cpp",
         "numbers": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "format": "cpp",
+        "span": "cpp",
+        "variant": "cpp",
+        "charconv": "cpp",
+        "ctime": "cpp",
+        "map": "cpp",
+        "text_encoding": "cpp"
     }
 }

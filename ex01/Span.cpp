@@ -20,8 +20,8 @@ int Span::shortestSpan() {
 
     int shortestSpan = INT_MAX;
     int n1, n2;
-
-    for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); ++it) {
+    std::vector<int>::iterator it;
+    for (it = tmp.begin(); it != tmp.end(); ++it) {
         n1 = *it;
         if (it + 1 != tmp.end())
             n2 = *(it + 1);
