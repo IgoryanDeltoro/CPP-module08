@@ -6,7 +6,7 @@ Span::~Span() {}
 
 void Span::addNumber(int n) {
     if (_data.size() >= _N) {
-        throw std::out_of_range("The buffer is already full!");
+        throw std::runtime_error("The buffer is already full!");
     }
     _data.push_back(n);
 }
@@ -19,7 +19,7 @@ int Span::shortestSpan() {
     sort(tmp.begin(), tmp.end());
 
     int shortestSpan = INT_MAX;
-    int out_n1, out_n2, n1, n2;
+    int n1, n2;
 
     for (std::vector<int>::iterator it = tmp.begin(); it != tmp.end(); ++it) {
         n1 = *it;
@@ -29,10 +29,16 @@ int Span::shortestSpan() {
             break;
         if ((n2 - n1) < shortestSpan) {
             shortestSpan = n2 - n1;
-            out_n1 = n1;
-            out_n2 = n2;
         }
     }
-    std::cout << "The shortens span is between number " << out_n1 << " and " << out_n2 << std::endl;
     return shortestSpan;
+}
+
+int Span::longestSpan() {
+    if (_data.size() < 2)
+        throw std::runtime_error("Not enough numbers to find span");
+    
+    int small = *std::min_element(_data.begin(), _data.end());
+    int max = *std::max_element(_data.begin(), _data.end());
+    return (max - small);
 }

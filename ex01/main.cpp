@@ -1,4 +1,7 @@
 #include "Span.hpp"
+#include <iostream>
+#include <vector>
+
 
 int main(void) {
 
@@ -23,6 +26,23 @@ int main(void) {
     {
         try
         {
+            int numbers[] = {6};
+            int size = sizeof(numbers) / sizeof(numbers[0]);
+            Span s(size);
+
+            for (int i = 0; i < size; i++) {
+                s.addNumber(numbers[i]);
+            }
+            s.shortestSpan();
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\n';
+        }
+    }
+    {
+        try
+        {
             int size = 10000;
 
             std::vector<int> extra;
@@ -30,12 +50,14 @@ int main(void) {
                 extra.push_back(i);
 
             Span s(size);
+            s.addNumber(200);
             s.addNumber(extra.begin(), extra.end());
-            std::cout << s.shortestSpan() << std::endl; // 1
+            std::cout << s.shortestSpan() << std::endl;
         }
         catch(const std::exception& e)
         {
             std::cerr << e.what() << '\n';
         }
     }
+    return 0;
 }
