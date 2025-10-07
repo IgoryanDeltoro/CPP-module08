@@ -13,7 +13,7 @@ void Span::addNumber(int n) {
 
 int Span::shortestSpan() {
     if (_data.size() < 2)
-        throw std::runtime_error("Not enough numbers to find span");
+        throw std::runtime_error("Not enough numbers to find span.");
 
     std::vector<int>tmp = _data; 
     sort(tmp.begin(), tmp.end());

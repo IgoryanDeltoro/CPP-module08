@@ -6,6 +6,11 @@
 #include <list>
 
 int main() {
+{
+    std::cout << "\n\n==================== STL-container test =================\n";
+    //Instead of writing separate functions like list or vector.
+    //…you write one function template that works for all containers.
+    //This is the beauty of templates — they’re resolved at compile time based on the type you pass.
     try {
         std::vector<int> v;
         v.push_back(10);
@@ -34,6 +39,6 @@ int main() {
     catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
-
+}
     return 0;
 }

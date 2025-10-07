@@ -8,7 +8,7 @@
 class Span {
     private:
         unsigned int _N;
-        std::vector<int>_data;
+        std::vector<int> _data;
 
         Span();
         Span(const Span &other);
@@ -27,6 +27,6 @@ class Span {
 
 };
 
-#include "span.tpp"
+#include "Span.tpp"
 
 #endif 

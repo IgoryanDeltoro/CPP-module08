@@ -8,12 +8,12 @@ int main(void) {
     {
         try
         {
-            int size = 10;
             int numbers[] = {6,6,17,10,14,12,35,36,21,0,9};
+            int size = sizeof(numbers) / sizeof(numbers[0]);
 
             Span s(size);
 
-            for (int i = 0; i < size; i++) {
+            for (int i = 0; i <= size; i++) {
                 s.addNumber(numbers[i]);
             }
             s.shortestSpan();
@@ -50,9 +50,9 @@ int main(void) {
                 extra.push_back(i);
 
             Span s(size);
-            s.addNumber(200);
             s.addNumber(extra.begin(), extra.end());
             std::cout << s.shortestSpan() << std::endl;
+            std::cout << s.longestSpan() << std::endl;
         }
         catch(const std::exception& e)
         {
